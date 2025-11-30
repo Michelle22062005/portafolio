@@ -37,4 +37,8 @@ td{
     background-color: #def;
     padding: 10px;
     border: 2px solid rgb(125, 10, 148);
+
+}
+li{
+    list-style: none;
 }
