@@ -1,44 +1,219 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cinzel:wght@400..900&family=Handlee&family=Patrick+Hand&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+* {
     box-sizing: border-box;
-
+    scroll-behavior: smooth;
 }
-body{margin: 0;
-padding: 0;
-background-color: rgb(247, 197, 246);
-
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.5),   /* Oscurecimiento suave, 0.5 = 50% */
+        rgba(0, 0, 0, 0.5)
+    ),
+    url("https://www.formation-professionnelle.pro/wp-content/uploads/2021/04/formation-en-informatique.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #edeef1dd;
 }
 
-h1{
-    font-family: serif;
-    margin: center;
-    text-align: center;
+.header {
+     background-image: linear-gradient(
+        rgba(0, 0, 0, 0.5),   /* Oscurecimiento suave, 0.5 = 50% */
+        rgba(0, 0, 0, 0.5)
+    ), url("https://www.shutterstock.com/shutterstock/photos/2435905971/display_1500/stock-photo-blue-matrix-background-stream-of-binary-code-falling-numbers-on-dark-backdrop-digital-computer-2435905971.jpg");
+    padding: 20px;
+    display: flex;
+    flex-direction: column;   
+    align-items: flex-start;  
+    gap: 10px;             
+    color: rgb(231, 234, 240);
+    font-size: 20px;
+}
+
+.header_nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;            /* Menú horizontal */
+    gap: 20px;                /* Espacio entre enlaces */
+}
+.header_nav-item a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 18px;
+}
+.header_nav-item a:hover {
+    color: #a459ef;
+    text-decoration: underline;
+}
+/* Sección "Sobre mí" */
+.sobre_mi{
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: auto;
+    margin-bottom: 20px;
+    width: 70%;
+    text-align: justify;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Estilo general de los párrafos */
+p{
+    color: rgba(240, 236, 236, 0.8);
 }
 h2{
-    font-family: serif;
     margin: center;
     text-align: center;
 }
+/*---------PORTFOLIO SECTION------*/
+.portafolio{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    color: #fffd;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    container-name: portfolio;
+    container-type: inline-size;
+    justify-content: space-evenly;
+    margin: 50px 50px;
+}
+.portafolio__title{
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+.portafolio__project-container{
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    grid-template-rows: auto;
+    max-width: 1300px;
+    margin: auto;
+    width: 100%;
+    gap: 15px;
+    padding: 12px;
+    min-height: 60vh;
+}
+.portafolio__project-container .portafolio__project:nth-child(3) {
+    grid-column: 1 / span 2;
+}
+
+.portafolio__project{
+    background-image: linear-gradient(rgba(5, 5, 5, 0.6), #0009), url("https://www.orientmct.com/wp-content/uploads/2023/05/Reservoir-Engineering-Applications-of-Advanced-Data-Analytics-.jpg");
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    place-content: center;
+    border: 2px solid #842b96;
+    border-radius: 8px;
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range: cover 5% cover 40%;
+}
+.portafolio__project:hover{
+    opacity: 0.74;
+    outline: 2px solid rgba(36, 26, 26, 0.4);
+    cursor: pointer;
+    will-change: transform;
+    transform: scale(1.05);
+}
+.portafolio__project-name{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+}
+.portafolio__project-name:hover{
+    color: #e282f3;
+    text-decoration: underline;
+}
+
+/*---------Table Python------*/
+
+.header-table{
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.5),   /* Oscurecimiento suave, 0.5 = 50% */
+        rgba(0, 0, 0, 0.5)
+    ),
+    url("https://www.shutterstock.com/shutterstock/photos/1109762051/display_1500/stock-photo-futuristic-motion-element-user-interface-information-technology-virtual-head-up-display-for-1109762051.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding-bottom: 40px;
+    
+}
+header{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.button-python{
+    margin: 20px;
+    padding: 10px 20px;
+    background-color:transparent;
+    border: 2px solid #842b96;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.button-python a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+.button-python:hover{
+    background-color: rgb(5, 1, 60);
+    cursor: pointer;
+}
+
+footer{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(231, 234, 240);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+
+
 table{
-    font-family: serif;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.5),   /* Soft darkening, 0.5 = 50% */
+        rgba(0, 0, 0, 0.5)
+    );
     margin: auto;
     text-align: center;
     border-collapse: collapse;
     width: 90%;
-    box-shadow: 0 0 28px rgba(0,0,0,0.15);
+    box-shadow: 0 0 28px rgba(4, 41, 57, 0.15);
 
 }
 th{
-    background-color: rgb(193, 80, 249);
+    background-color: transparent;
     text-transform: uppercase;
     padding: 10px;
     border: 2px solid rgb(125, 10, 148);
+    color: #ddd;
 }
 td{
-    background-color: #def;
+    background-color: transparent;
     padding: 10px;
     border: 2px solid rgb(125, 10, 148);
-
+    color: #ddd;
+    
 }
-li{
+td a{
+    color: #fff;
+}
+td a:hover{
+    color: #b43dcc;
+}
+td li{
     list-style: none;
 }
