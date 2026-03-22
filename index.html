@@ -1,69 +1,116 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danna Michelle — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/index.css" />
 </head>
 <body>
-    <div class="container"></div>
-   <header class="header">
-        <h1>Danna Michelle Oyola Apache</h1>
-         <nav class="header_nav">
-                <ul class="header_nav-list">
-                <li class="header_nav-item"><a href="#profile">About me</a></li>
-                <li class="header_nav-item"><a href="#portafolio">Portfolio</a></li>
-                <li class="header_nav-item"><a href="#Contact">Contact</a></li>
-                </ul>
-            </nav>
-   </header>
 
-   <!--Esta seccion es una para la descripcion personal -->
-   <main>
-    <section class="sobre_mi" id="profile">
-        <h2>About me: </h2>
-        <p>My name is Danna, I am 20 years old. I am a responsible, organized person committed to quality in every task I perform. I adapt easily, learn quickly, and always maintain a proactive attitude. I enjoy working in teams, providing solutions, and contributing to achieving the organization's goals.</p>
+  <!-- FONDO: Constelación animada -->
+  <canvas id="constellation-bg"></canvas>
+
+  <!-- HEADER / NAV -->
+  <header class="site-header">
+    <div class="logo">D. M. Oyola</div>
+    <nav class="site-nav">
+      <a href="/index.html" class="nav-link active">Home</a>
+      <a href="/about_me.html" class="nav-link">About</a>
+      <a href="#portfolio" class="nav-link">Portfolio</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <main class="main-content">
+
+    <!-- HERO -->
+    <section class="hero">
+      <p class="hero-label">Software Development · Medellín, Colombia</p>
+      <h1 class="hero-name">
+        Danna <em>Michelle</em><br>Oyola Apache
+      </h1>
+      <p class="hero-sub">Student Developer · Web &amp; Databases</p>
+      <div class="hero-tags">
+        <span class="tag">Python</span>
+        <span class="tag">HTML &amp; CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">Git / GitHub</span>
+      </div>
     </section>
 
-<!--Esta seccion es para los proyectos-->
-    <section class="portafolio" id="portafolio">
-        <h2 class="portafolio__title">PORTFOLIO SECTION</h2>
-        <div class="portafolio__project-container">
-           <div class="portafolio__project">
-                <a class="portafolio__project-name" href="python.html">PYTHON </a>
-            </div>
-            
-            <div class="portafolio__project">
-                <a class="portafolio__project-name" href="html-css.html">HTML Y CSS</a>
-            </div>
-            <div class="portafolio__project">
-                <a class="portafolio__project-name" href="javascript.html">JAVASCRIPT</a>
-            </div>
-            <div class="portafolio__project">
-                <a class="portafolio__project-name" href="base_de_datos.html">BASE DE DATOS</a>
-            </div>
-        </div>
+    <div class="divider"></div>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio" id="portfolio">
+      <p class="section-label">Portfolio</p>
+      <h2 class="section-title">Selected work</h2>
+      <div class="portfolio-grid">
+
+        <a href="python.html" class="portfolio-card">
+          <div class="card-module">Module 01</div>
+          <div class="card-title">Python</div>
+          <div class="card-desc">Exercises, data structures, OOP and file management projects.</div>
+          <div class="card-arrow">→</div>
+        </a>
+
+        <a href="html-css.html" class="portfolio-card">
+          <div class="card-module">Module 02</div>
+          <div class="card-title">HTML &amp; CSS</div>
+          <div class="card-desc">Layouts, semantic markup, responsive design and group projects.</div>
+          <div class="card-arrow">→</div>
+        </a>
+
+        <a href="javascript.html" class="portfolio-card">
+          <div class="card-module">Module 03</div>
+          <div class="card-title">JavaScript</div>
+          <div class="card-desc">DOM manipulation, async flows, collaborative task managers.</div>
+          <div class="card-arrow">→</div>
+        </a>
+
+        <a href="base_de_datos.html" class="portfolio-card">
+          <div class="card-module">Module 04</div>
+          <div class="card-title">Databases</div>
+          <div class="card-desc">SQL queries, hybrid architecture, MySQL &amp; MongoDB.</div>
+          <div class="card-arrow">→</div>
+        </a>
+
+      </div>
     </section>
 
-    </main>
-    <footer id="Contact">
-        <h2>Contact</h2>
-        <div class="github-link">
-    <a href="https://github.com/Michelle22062005">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-        class="bi bi-github" viewBox="0 0 16 16">
-        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-    </svg>
-    </a>
-    <a href="mailto:danna2206mi@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></a>
-    
-</svg>
-</div>
-    </footer>
+    <!-- SKILLS -->
+    <section class="skills">
+      <p class="section-label">Skills</p>
+      <div class="skills-list">
+        <div class="skill-item"><span class="skill-dot"></span> Python</div>
+        <div class="skill-item"><span class="skill-dot"></span> HTML</div>
+        <div class="skill-item"><span class="skill-dot"></span> CSS</div>
+        <div class="skill-item"><span class="skill-dot"></span> JavaScript</div>
+        <div class="skill-item"><span class="skill-dot"></span> MySQL</div>
+        <div class="skill-item"><span class="skill-dot"></span> MongoDB</div>
+        <div class="skill-item"><span class="skill-dot"></span> Git / GitHub</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER / CONTACT -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-left">
+      <p class="footer-name">Danna Michelle Oyola Apache</p>
+      <a href="mailto:danna2206mi@gmail.com" class="footer-email">danna2206mi@gmail.com</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/Michelle22062005" target="_blank" class="footer-link">GitHub</a>
+      <a href="mailto:danna2206mi@gmail.com" class="footer-link">Email</a>
+      <a href="#" class="footer-link">LinkedIn</a>
+    </div>
+  </footer>
+
+    <script src="./js/contelacion.js"></script>
 </body>
-
 </html>

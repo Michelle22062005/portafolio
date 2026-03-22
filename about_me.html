@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danna Michelle — About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/index.css" />
+  <style>
+    /* ---- ABOUT PAGE ESPECÍFICO ---- */
+    .about-hero {
+      margin-bottom: 52px;
+    }
+    .about-hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: #f0ede8;
+      margin-bottom: 10px;
+    }
+    .about-hero-name em {
+      font-style: italic;
+      color: #a990d4;
+    }
+    .about-hero-sub {
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #7c6fa0;
+      margin-bottom: 28px;
+    }
+
+    /* Info chips */
+    .info-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 0;
+    }
+    .chip {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 300;
+      color: #6b6a66;
+      background: #111115;
+      border: 0.5px solid #1f1e26;
+      border-radius: 20px;
+      padding: 6px 14px;
+      transition: border-color 0.25s, color 0.25s;
+    }
+    .chip:hover {
+      border-color: #3d3655;
+      color: #9c9890;
+    }
+    .chip-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #7c6fa0;
+      flex-shrink: 0;
+    }
+
+    /* Bio card */
+    .bio-card {
+      background: #141418;
+      border: 0.5px solid #1f1e26;
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+    .bio-text {
+      font-size: 15px;
+      font-weight: 300;
+      color: #7a7874;
+      line-height: 1.9;
+    }
+    .bio-text .hl { color: #a990d4; }
+
+    /* Skills grid */
+    .skills-block {
+      margin-bottom: 32px;
+    }
+    .skills-grid-am {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 10px;
+    }
+    .skill-card-am {
+      background: #141418;
+      border: 0.5px solid #1f1e26;
+      border-radius: 10px;
+      padding: 18px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      transition: border-color 0.25s, background 0.25s;
+      cursor: default;
+    }
+    .skill-card-am:hover {
+      border-color: #3d3655;
+      background: #161520;
+    }
+    .skill-icon-am {
+      font-size: 22px;
+      line-height: 1;
+    }
+    .skill-name {
+      font-size: 12px;
+      font-weight: 400;
+      color: #6b6a66;
+      letter-spacing: 0.05em;
+    }
+
+    /* Bottom grid */
+    .bottom-grid-am {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    /* Projects */
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .project-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      background: #0f0f13;
+      border: 0.5px solid #1a1a22;
+      border-radius: 8px;
+      transition: border-color 0.25s;
+    }
+    .project-row:hover { border-color: #3d3655; }
+    .project-info { display: flex; flex-direction: column; gap: 3px; }
+    .project-name {
+      font-size: 13px;
+      font-weight: 400;
+      color: #c8c4bc;
+    }
+    .project-tech {
+      font-size: 11px;
+      color: #3f3e3c;
+      letter-spacing: 0.06em;
+    }
+    .project-arrow {
+      font-size: 14px;
+      color: #3d3655;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .project-row:hover .project-arrow { color: #a990d4; transform: translateX(3px); }
+
+    /* Education list */
+    .edu-list-am {
+      list-style: none;
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .edu-list-am li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 300;
+      color: #6b6a66;
+      padding: 12px 14px;
+      background: #0f0f13;
+      border: 0.5px solid #1a1a22;
+      border-radius: 8px;
+    }
+    .edu-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #7c6fa0;
+      flex-shrink: 0;
+    }
+
+    /* CV + socials */
+    .cv-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .btn-cv-am {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: #a990d4;
+      background: #1d1b26;
+      border: 0.5px solid #3d3655;
+      border-radius: 6px;
+      padding: 8px 18px;
+      cursor: pointer;
+      transition: background 0.25s;
+      text-decoration: none;
+    }
+    .btn-cv-am:hover { background: #26213a; }
+    .social-row {
+      display: flex;
+      gap: 8px;
+    }
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border: 0.5px solid #1f1e26;
+      border-radius: 6px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: border-color 0.25s;
+    }
+    .social-link:hover { border-color: #3d3655; }
+
+    @media (max-width: 650px) {
+      .bottom-grid-am { grid-template-columns: 1fr; }
+      .skills-grid-am { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FONDO: Constelación animada -->
+  <canvas id="constellation-bg"></canvas>
+
+  <!-- HEADER / NAV -->
+  <header class="site-header">
+    <div class="logo">D. M. Oyola</div>
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about_me.html" class="nav-link active">About</a>
+      <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <main class="main-content">
+
+    <!-- HERO -->
+    <section class="about-hero">
+      <p class="hero-label">About me</p>
+      <h1 class="about-hero-name">Danna <em>Michelle</em><br>Oyola Apache</h1>
+      <p class="about-hero-sub">Student Developer · 20 years old · Medellín, Colombia</p>
+      <div class="info-chips">
+        <span class="chip"><span class="chip-dot"></span>Medellín, Colombia</span>
+        <span class="chip"><span class="chip-dot"></span>Web Development</span>
+        <span class="chip"><span class="chip-dot"></span>Student / Developer</span>
+        <span class="chip"><span class="chip-dot"></span>Learning: Python · JS · Databases</span>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- BIO -->
+    <div class="bio-card">
+      <p class="section-label">Profile</p>
+      <p class="bio-text">
+        My name is Danna, I am 20 years old. I am a <span class="hl">responsible, organized</span> person
+        committed to quality in every task I perform. I <span class="hl">adapt easily</span>, learn quickly,
+        and always maintain a proactive attitude. I enjoy working in teams, providing solutions,
+        and contributing to achieving the organization's goals.
+      </p>
+    </div>
+
+    <!-- SKILLS -->
+    <section class="skills-block">
+      <p class="section-label">Skills</p>
+      <div class="skills-grid-am">
+        <div class="skill-card-am">
+          <div class="skill-icon-am">🐍</div>
+          <span class="skill-name">Python</span>
+        </div>
+        <div class="skill-card-am">
+          <div class="skill-icon-am">🌐</div>
+          <span class="skill-name">HTML</span>
+        </div>
+        <div class="skill-card-am">
+          <div class="skill-icon-am">🎨</div>
+          <span class="skill-name">CSS</span>
+        </div>
+        <div class="skill-card-am">
+          <div class="skill-icon-am">⚡</div>
+          <span class="skill-name">JavaScript</span>
+        </div>
+        <div class="skill-card-am">
+          <div class="skill-icon-am">🗄️</div>
+          <span class="skill-name">MySQL</span>
+        </div>
+        <div class="skill-card-am">
+          <div class="skill-icon-am">🍃</div>
+          <span class="skill-name">MongoDB</span>
+        </div>
+        <div class="skill-card-am">
+          <div class="skill-icon-am">🐙</div>
+          <span class="skill-name">Git / GitHub</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS + EDUCATION -->
+    <div class="bottom-grid-am">
+
+      <!-- Projects -->
+      <div class="bio-card" style="margin-bottom:0">
+        <p class="section-label">Projects</p>
+        <div class="projects-list">
+          <div class="project-row">
+            <div class="project-info">
+              <span class="project-name">Inventory System</span>
+              <span class="project-tech">PHP + MySQL</span>
+            </div>
+            <span class="project-arrow">→</span>
+          </div>
+          <div class="project-row">
+            <div class="project-info">
+              <span class="project-name">Database Queries</span>
+              <span class="project-tech">SQL JOIN practice</span>
+            </div>
+            <span class="project-arrow">→</span>
+          </div>
+          <div class="project-row">
+            <div class="project-info">
+              <span class="project-name">Database Portfolio</span>
+              <span class="project-tech">Hybrid architecture</span>
+            </div>
+            <span class="project-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education + CV -->
+      <div class="bio-card" style="margin-bottom:0">
+        <p class="section-label">Education</p>
+        <ul class="edu-list-am">
+          <li><span class="edu-dot"></span>Software Development Student</li>
+          <li><span class="edu-dot"></span>Database Management</li>
+          <li><span class="edu-dot"></span>Web Development</li>
+        </ul>
+        <div class="cv-row">
+          <a href="#" class="btn-cv-am">Download CV ↓</a>
+          <div class="social-row">
+            <a href="https://github.com/Michelle22062005" target="_blank" class="social-link" title="GitHub">📁</a>
+            <a href="mailto:danna2206mi@gmail.com" class="social-link" title="Email">✉️</a>
+            <a href="#" class="social-link" title="LinkedIn">💼</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-left">
+      <p class="footer-name">Danna Michelle Oyola Apache</p>
+      <a href="mailto:danna2206mi@gmail.com" class="footer-email">danna2206mi@gmail.com</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/Michelle22062005" target="_blank" class="footer-link">GitHub</a>
+      <a href="mailto:danna2206mi@gmail.com" class="footer-link">Email</a>
+      <a href="#" class="footer-link">LinkedIn</a>
+    </div>
+  </footer>
+
+      <script src="./js/contelacion.js"></script>
+
+</body>
+</html>

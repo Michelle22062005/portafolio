@@ -1,0 +1,536 @@
+/* =========================================
+   PORTFOLIO — Danna Michelle Oyola Apache
+   Estilo: Minimalista elegante, oscuro
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ---- RESET ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- BASE ---- */
+:root {
+  --bg:          #0d0d0f;
+  --surface:     #141418;
+  --border:      #1f1e26;
+  --border-hover:#3d3655;
+  --text-primary:#f0ede8;
+  --text-second: #bcb7ae;
+  --text-muted:  #55534f;
+  --accent:      #a990d4;
+  --accent-dim:  #7c6fa0;
+  --accent-bg:   #1d1b26;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ---- FONDO: CANVAS CONSTELACIÓN ---- */
+#constellation-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ---- HEADER ---- */
+.site-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 60px;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--text-second);
+}
+
+.site-nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  transition: color 0.25s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-second);
+}
+
+/* ---- MAIN ---- */
+.main-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 60px 60px;
+}
+
+/* ---- HERO ---- */
+.hero {
+  margin-bottom: 56px;
+}
+
+.hero-label {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--accent-dim);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.hero-name em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-sub {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 28px;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  padding: 5px 13px;
+  border: 0.5px solid var(--border);
+  border-radius: 20px;
+  color: var(--text-muted);
+  transition: border-color 0.25s, color 0.25s;
+}
+
+.tag:hover {
+  border-color: var(--border-hover);
+  color: var(--text-second);
+}
+
+/* ---- DIVIDER ---- */
+.divider {
+  height: 0.5px;
+  background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent);
+  margin: 0 0 52px;
+}
+
+.button-proyect{
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    background-color: var(--text-second);
+    color: var(--text-muted);
+    text-decoration: none;
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 18px;
+    transition: border-color 0.25s, color 0.25s;
+}
+
+/* ---- SECTION LABEL / TITLE ---- */
+.section-label {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--accent-dim);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--text-second);
+  margin-bottom: 32px;
+}
+
+/* ---- ABOUT SNIPPET ---- */
+.about-snippet {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 64px;
+}
+
+.about-text {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+.btn-ghost {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--accent-dim);
+  text-decoration: none;
+  border: 0.5px solid var(--border-hover);
+  border-radius: 6px;
+  padding: 7px 16px;
+  transition: background 0.25s, color 0.25s;
+}
+
+.btn-ghost:hover {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+/* ---- PORTFOLIO ---- */
+.portfolio {
+  margin-bottom: 64px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.portfolio-card {
+  display: block;
+  text-decoration: none;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  position: relative;
+  transition: border-color 0.3s, background 0.3s;
+  overflow: hidden;
+}
+
+.portfolio-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top left, rgba(160,120,220,0.05), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.portfolio-card:hover {
+  border-color: var(--border-hover);
+  background: #161520;
+}
+
+.portfolio-card:hover::before {
+  opacity: 1;
+}
+
+.portfolio-card:hover .card-arrow {
+  transform: translateX(4px);
+  color: var(--accent);
+}
+
+.card-module {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--text-second);
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 12px;
+  font-weight: 300;
+  color: #3f3e3c;
+  line-height: 1.7;
+}
+
+.card-arrow {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  font-size: 16px;
+  color: var(--text-muted);
+  transition: transform 0.25s, color 0.25s;
+}
+
+/* ---- SKILLS ---- */
+.skills {
+  margin-bottom: 16px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-muted);
+  background: #111115;
+  border: 0.5px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 14px;
+  transition: border-color 0.25s;
+}
+
+.skill-item:hover {
+  border-color: var(--border-hover);
+}
+
+.skill-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  flex-shrink: 0;
+}
+
+/* ---- FOOTER ---- */
+.site-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 60px;
+  border-top: 0.5px solid var(--border);
+  margin-top: 60px;
+}
+
+.footer-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.footer-email {
+  font-size: 12px;
+  color: #3d3c3a;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.25s;
+}
+
+.footer-email:hover {
+  color: var(--accent-dim);
+}
+
+.footer-links {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-link {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #3a3938;
+  text-decoration: none;
+  padding: 5px 12px;
+  border: 0.5px solid var(--border);
+  border-radius: 4px;
+  transition: border-color 0.25s, color 0.25s;
+}
+
+.footer-link:hover {
+  border-color: var(--border-hover);
+  color: var(--text-muted);
+}
+
+/* =========================================
+   PÁGINAS DE TABLA (python, js, css, db)
+   ========================================= 
+
+.header-table {
+  min-height: 100vh;
+}*/
+
+.page-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 60px 40px 40px;
+}
+
+.page-header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 300;
+  color: var(--text-primary);
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+}
+
+.btn-return {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-decoration: none;
+  border: 0.5px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 18px;
+  transition: border-color 0.25s, color 0.25s;
+}
+
+.btn-return:hover {
+  border-color: var(--border-hover);
+  color: var(--accent-dim);
+}
+
+/* TABLA */
+.table-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 40px 80px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 0.5px solid var(--border);
+}
+
+th {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 0.5px solid var(--border);
+  background: #111115;
+}
+
+td {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-second);
+  padding: 16px 20px;
+  border-bottom: 0.5px solid var(--border);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background: rgba(160, 120, 220, 0.03);
+}
+
+td a {
+  color: var(--accent-dim);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  transition: color 0.2s;
+}
+
+td a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+td li {
+  list-style: none;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+/* =========================================
+   ABOUT ME PAGE
+   ========================================= */
+
+.about-page-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 60px;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 700px) {
+  .site-header { padding: 24px 28px; }
+  .site-nav { gap: 20px; }
+  .main-content { padding: 60px 28px 40px; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .site-footer { flex-direction: column; align-items: flex-start; gap: 20px; padding: 28px; }
+  .table-wrapper { padding: 16px 20px 60px; }
+}
