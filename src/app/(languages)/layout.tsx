@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Languages - Portfolio",
-  description: "Projects and activities related to programming languages",
+  title: "Lenguajes - Portafolio",
+  description:
+    "Proyectos y actividades relacionadas con lenguajes de programación",
 };
 
 export default function LanguagesLayout({
@@ -10,9 +11,5 @@ export default function LanguagesLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <div className="languages-container contents">
-      {children}
-    </div>
-  );
+  return <div className="languages-container contents">{children}</div>;
 }

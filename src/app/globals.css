@@ -251,8 +251,34 @@
   }
 
   /* ---- PORTFOLIO ---- */
-  .portfolio {
+  .portfolio, .about {
     margin-bottom: 64px;
+    margin-top: 24px;
+  }
+
+  .portfolio-cards {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(220px, 1fr);
+    gap: 12px;
+    align-items: stretch;
+    overflow-x: auto;
+    padding: 4px;
+    margin: -4px;
+    scrollbar-width: thin;
+  }
+
+  .portfolio-card {
+    position: relative;
+    display: flex;
+    min-height: 220px;
+    height: 100%;
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .portfolio-card p {
+    margin-bottom: 32px;
   }
 
 
@@ -278,6 +304,7 @@
   /* ---- SKILLS ---- */
   .skills {
     margin-bottom: 16px;
+    margin-top: 24px;
   }
 
   .skills-list {
