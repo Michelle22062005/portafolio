@@ -150,24 +150,6 @@
     margin-bottom: 28px;
   }
 
-  .hero-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.08em;
-    padding: 5px 13px;
-    border: 0.5px solid rgb(95, 13, 107);
-    border-radius: 20px;
-    color: var(--text-muted);
-    transition: border-color 0.25s, color 0.25s;
-   
-  }
 
   .tag:hover {
    border:rgb(168,85,247,0.1);
@@ -545,5 +527,35 @@
 
     .table-wrapper {
       padding: 16px 20px 60px;
+    }
+  }
+
+  .learning-track {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    padding: 0.25rem 0 1rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: rgba(169, 144, 212, 0.5) transparent;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .learning-card {
+    flex: 0 0 82%;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+
+  @media (min-width: 640px) {
+    .learning-card {
+      flex-basis: calc((100% - 1rem) / 2);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .learning-card {
+      flex-basis: calc((100% - 2rem) / 3);
     }
   }
