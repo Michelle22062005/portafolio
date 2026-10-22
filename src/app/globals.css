@@ -62,14 +62,24 @@
   *::before,
   *::after {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
   }
 
 
 
   html {
     scroll-behavior: smooth;
+  }
+
+  .home-page {
+    width: min(100%, 64rem);
+    margin-inline: auto;
+    padding: 2rem;
+  }
+
+  @media (max-width: 640px) {
+    .home-page {
+      padding-inline: 1.5rem;
+    }
   }
 
 

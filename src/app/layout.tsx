@@ -31,7 +31,7 @@ export default function RootLayout({
       lang="es"
       className={`${cormorant.variable} ${dmSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="body">
         <ConstellationBackground />
         <main className="relative z-10 flex-1 flex flex-col">{children}</main>
       </body>
