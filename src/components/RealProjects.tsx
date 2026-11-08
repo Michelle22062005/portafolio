@@ -68,6 +68,76 @@ export default function RealProject (){
               </a>
             </div>
           </div>
+           {/* PAGE FINANCE PROJECT CARD */}
+          <div className="group rounded-2xl border border-slate-800 bg-slate-900/50 backdrop-blur-sm transition-all duration-300 hover:border-purple-500/40 hover:shadow-[0_0_25px_rgba(168,85,247,0.15)] flex flex-col justify-between overflow-hidden">
+            <div>
+              <div className="relative aspect-video w-full border-b border-slate-800 bg-slate-950 overflow-hidden">
+                <Image
+                  src="/img/page-finance-manager.jpeg"
+                  alt="Vista previa de Finance Page"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="rounded-lg object-cover p-3 transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <div className="p-6 space-y-4">
+                <div className="flex justify-between items-start">
+                  <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">Finance Page</h3>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-950/80 text-purple-300 border border-purple-800/60">Finanzas</span>
+                </div>
+
+                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                  Landing page promocional para una aplicación de gestión financiera personal, diseñada para presentar sus funcionalidades, destacar sus beneficios y ofrecer una vista previa de la experiencia de usuario. Incluye una interfaz moderna, diseño responsive y una sección de demostración interactiva de la aplicación.
+                </p>
+
+                <div className="flex flex-wrap gap-1.5">
+                  <span className="rounded-md bg-cyan-950/40 px-2 py-0.5 text-xs font-mono text-cyan-400 border border-cyan-500/20">
+                    Typescript
+                  </span>
+                  <span className="rounded-md bg-emerald-950/40 px-2 py-0.5 text-xs font-mono text-emerald-400 border border-emerald-500/20">
+                    Node.js
+                  </span>
+                  
+                  <span className="rounded-md bg-indigo-950/40 px-2 py-0.5 text-xs font-mono text-indigo-400 border border-indigo-500/20">
+                    React Native
+                  </span>
+                  <span className="rounded-md bg-indigo-950/40 px-2 py-0.5 text-xs font-mono text-indigo-400 border border-indigo-500/20">
+                    Expo
+                  </span>
+                   <span className="rounded-md bg-purple-950/40 px-2 py-0.5 text-xs font-mono text-purple-400 border border-purple-500/20">
+                    PostgreSQL
+                  </span>
+                   <span className="rounded-md bg-purple-950/40 px-2 py-0.5 text-xs font-mono text-purple-400 border border-purple-500/20">
+                    Drizzle ORM
+                  </span>
+                   <span className="rounded-md bg-blue-950/40 px-2 py-0.5 text-xs font-mono text-blue-400 border border-blue-500/20">
+                   Render
+                  </span>
+                
+                </div>
+              </div>
+            </div>
+
+            <div className="p-6 pt-0 flex items-center justify-between border-t border-slate-800/60 pt-4 mt-2 text-xs font-mono">
+              <a
+                href="https://page-finance-manager.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:text-purple-300 transition-colors font-semibold"
+              >
+                Ver la pagina ↗
+              </a>
+              <a
+                href="https://github.com/Michelle22062005/page-finance-manager"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-slate-200 transition-colors"
+              >
+                GitHub Repo
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     )
